@@ -57,6 +57,11 @@ Example:
         height: 50px;
       }
 
+      #header-container .row-icon{
+        margin-top: 5px;
+        margin-left:30px;
+      }
+
       #date-container {
         background-color: #eaeaea;
         height: 40px;
@@ -78,6 +83,11 @@ Example:
         width: 60px;
         position: absolute;
         left: 0px;
+      }
+
+      .row-icon img{
+        height:25px;
+        margin-top:5px;
       }
 
       #date-container .row-icon,
@@ -117,21 +127,22 @@ Example:
     <paper-material class="layout vertical" elevation="3">
 
       <div id="header-container" class="layout horizontal center-center">
+        <div class="row-icon"><img src="server.png"></div>
         <content select="h1"></content>
       </div>
 
       <div id="date-container" class="layout horizontal center-center">
-        <div class="row-icon"></div>
+        <div class="row-icon"><img src="calendar.png"></div>
         <strong>[[datetime]]</strong>
       </div>
 
       <div id="user-container" class="layout horizontal center-center">
-        <div class="row-icon"></div>
+        <div class="row-icon"><img src="user.png"></div>
         <strong>[[user]]</strong>
       </div>
 
       <div id="status-container" class="layout horizontal center-center">
-        <div class="row-icon"></div>
+        <div class="row-icon"><img src="flag.png"></div>
         <strong>[[status]]</strong>
       </div>
 
