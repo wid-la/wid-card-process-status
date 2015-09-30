@@ -47,6 +47,12 @@
       datetime: {
         type: String
       }
+    },
+
+    ready: function ready() {
+      this.user = 'Nick Chad';
+      this.datetime = '09/29/15 10:05';
+      this.status = 'Deploy';
     }
 
   });
