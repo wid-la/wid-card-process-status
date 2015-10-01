@@ -47,6 +47,12 @@
       datetime: {
         type: String
       }
+    },
+
+    ready: function ready() {
+      this.user = 'Nick Chad';
+      this.datetime = '10/21/85 04:29';
+      this.status = 'Status';
     }
 
   });
