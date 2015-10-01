@@ -51,8 +51,8 @@
 
     ready: function ready() {
       this.user = 'Nick Chad';
-      this.datetime = '09/29/15 10:05';
-      this.status = 'Deploy';
+      this.datetime = '10/21/85 04:29';
+      this.status = 'Status';
     }
 
   });

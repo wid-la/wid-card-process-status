@@ -3,7 +3,7 @@
 <link rel="import" href="../iron-flex-layout/classes/iron-flex-layout.html">
 <link rel="import" href="../paper-material/paper-material.html">
 <link rel="import" href="../paper-styles/paper-styles-classes.html">
-<link rel="import" href="/components/iron-icons/iron-icons.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
 
 <link rel="import" href="../wid-card-weight-behavior/wid-card-weight-behavior.html">
 <link rel="import" href="../wid-versatile-websocket/wid-versatile-websocket.html">
@@ -31,7 +31,6 @@ Example:
       :host {
         display: block;
         box-sizing: border-box;
-        /*height: 300px;*/
         height: 100%;
         margin: 5px;
         position: relative;
@@ -39,10 +38,8 @@ Example:
       }
 
       paper-material {
-        /*padding: 5px;*/
         overflow-y: auto;
         height: calc(100%/2);
-        /*height: 600px;*/
         /*background-color: var(--paper-blue-100);*/
       }
 
@@ -57,32 +54,28 @@ Example:
       #header-container {
         background-color: #29b6f6;
         color: white;
-        /*height: 50px;*/
-        height: calc(100%/4);
+        /*height: calc(100%/4);*/
       }
 
       #date-container {
         background-color: #eaeaea;
-        /*height: 40px;*/
-        height: calc(100%/4);
+        /*height: calc(100%/4);*/
       }
 
       #user-container {
         background-color: #fff;
-        /*height: 40px;*/
-        height: calc(100%/4);
+        /*height: calc(100%/4);*/
       }
 
       #status-container {
         background-color: #eaeaea;
         color: red;
-        /*height: 40px;*/
-        height: calc(100%/4);
+        /*height: calc(100%/4);*/
       }
 
       .row-icon {
-        height: 100%;
-        width: calc(100%/5);
+        /*height: 100%;*/
+        /*width: calc(100%/5);*/
       }
 
       .row-icon iron-icon {
@@ -95,7 +88,6 @@ Example:
       }
 
       #header-container iron-icon {
-        /*--iron-icon-width: 80px;*/
         --iron-icon-width: calc(100%/4);
         margin-left: 10px;
       }
@@ -110,7 +102,6 @@ Example:
       }
 
       #user-container  .row-icon iron-icon {
-        /*--iron-icon-width: 20px;*/
         --iron-icon-width: calc(100%/3);
       }
 
@@ -118,8 +109,8 @@ Example:
         --iron-icon-width: calc(100%/2);
       }
 
-      .big {
-        --iron-icon-height: 80%;
+      .scale-icon {
+        /*--iron-icon-height: 80%;*/
       }
 
       #content-container {
@@ -146,24 +137,24 @@ Example:
 
     <paper-material class="layout vertical" elevation="3">
 
-      <div id="header-container" class="layout horizontal center-center">
-        <iron-icon class="big" src="server.png"></iron-icon>
+      <div id="header-container" class="layout horizontal flex">
+        <iron-icon class="scale-icon" src="server.png"></iron-icon>
         <div class="row-value layout horizontal flex center-center"><content select="h1">Archer Test</content></div>
       </div>
 
-      <div id="date-container" class="layout horizontal">
-        <div class="row-icon center-center"><iron-icon class="big" src="calendar.png"></iron-icon></div>
-        <div class="row-value layout horizontal flex center-center">[[datetime]]</div>
+      <div id="date-container" class="layout horizontal flex">
+        <div class="row-icon flex"><iron-icon class="scale-icon" src="calendar.png"></iron-icon></div>
+        <div class="row-value layout horizontal center-center flex-5">[[datetime]]</div>
       </div>
 
-      <div id="user-container" class="layout horizontal">
-        <div class="row-icon"><iron-icon class="big" src="user.png"></iron-icon></div>
-        <div class="row-value layout horizontal flex center-center">[[user]]</div>
+      <div id="user-container" class="layout horizontal flex">
+        <div class="row-icon flex"><iron-icon class="scale-icon" src="user.png"></iron-icon></div>
+        <div class="row-value layout horizontal flex-5 center-center">[[user]]</div>
       </div>
 
-      <div id="status-container" class="layout horizontal center-center">
-        <div class="row-icon"><iron-icon class="big" src="flag.png"></iron-icon></div>
-        <div class="row-value layout horizontal flex center-center">[[status]]</div>
+      <div id="status-container" class="layout horizontal flex">
+        <div class="row-icon flex"><iron-icon class="scale-icon" src="flag.png"></iron-icon></div>
+        <div class="row-value layout horizontal flex-5 center-center">[[status]]</div>
       </div>
 
     </paper-material>
