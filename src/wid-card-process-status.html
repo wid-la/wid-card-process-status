@@ -3,7 +3,7 @@
 <link rel="import" href="../iron-flex-layout/classes/iron-flex-layout.html">
 <link rel="import" href="../paper-material/paper-material.html">
 <link rel="import" href="../paper-styles/paper-styles-classes.html">
-<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
 
 <link rel="import" href="../wid-card-weight-behavior/wid-card-weight-behavior.html">
 <link rel="import" href="../wid-versatile-websocket/wid-versatile-websocket.html">
@@ -24,7 +24,7 @@ Example:
 -->
 <dom-module id="wid-card-process-status">
 
-  <template>
+<template>
 
     <style>
 
@@ -32,23 +32,15 @@ Example:
         display: block;
         box-sizing: border-box;
         height: 100%;
-        margin: 5px;
-        position: relative;
-        text-align: center;
       }
 
       paper-material {
         overflow-y: auto;
-        height: calc(100%/2);
-        /*background-color: var(--paper-blue-100);*/
+        height: 100%;
       }
 
       iron-icon {
-        color: var(--paper-blue-600);
-      }
-
-      h1 {
-        font-size: 18px;
+        /*color: var(--paper-blue-600);*/
       }
 
       #header-container {
@@ -70,16 +62,16 @@ Example:
       }
 
       .row-icon iron-icon {
-        margin-top: 5px;
+        /*margin-top: 5px;*/
       }
 
       .row-value {
         font-weight: bold;
-        font-size: 6vw;
+        font-size: 1.5vw;
       }
 
       #header-container iron-icon {
-        --iron-icon-height: 100%;
+        /*--iron-icon-height: 100%;*/
       }
 
       #date-container .row-icon,
@@ -104,10 +96,6 @@ Example:
         --iron-icon-height: 80%;
       }
 
-      #content-container {
-        padding: 10px;
-      }
-
       #websockets {
         display: none;
       }
@@ -119,23 +107,19 @@ Example:
       <!-- This is a requirement of `wid-card-subscriptions-behavior` -->
       <!-- one websocket element for each subscribed channel -->
       <template is="dom-repeat" items="[[websockets]]" as="ws">
-        <wid-versatile-websocket
-          url="[[ws.url]]"
-          token="[[ws.token]]"
-          subscription="[[ws.subscription]]"
-          on-data="_onData">
+        <wid-versatile-websocket url="[[ws.url]]" token="[[ws.token]]" subscription="[[ws.subscription]]" on-data="_onData">
         </wid-versatile-websocket>
       </template>
 
     </div>
 
 
-    <paper-material class="layout vertical" elevation="3">
+    <paper-material class="layout vertical flex" elevation="3">
 
       <div id="header-container" class="layout horizontal flex center-center">
         <div class="flex"></div>
         <iron-icon class="scale-icon flex-3" src="server.svg"></iron-icon>
-        <div class="row-value layout horizontal flex-8 center-center"><content select="h1">Archer Test</content></div>
+        <div class="row-value layout horizontal flex-8 center-center">[[name]]</div>
       </div>
 
       <div id="date-container" class="layout horizontal flex">
@@ -172,19 +156,21 @@ Example:
 
     properties: {
       /**
-       * Backup Status Code
-       * @type {Number}
+       * Active
+       * @type {Boolean}
        */
-      backup: {
-        type: Number
+      active: {
+        type: Boolean,
+        value: false
       },
 
       /**
-       * Deploy Status Code
+       * name
        * @type {String}
        */
-      deploy: {
-        type: String
+      name: {
+        type: String,
+        value: 'Process Name'
       },
 
       /**

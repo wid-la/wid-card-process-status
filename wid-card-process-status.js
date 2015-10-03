@@ -9,19 +9,21 @@
 
     properties: {
       /**
-       * Backup Status Code
-       * @type {Number}
+       * Active
+       * @type {Boolean}
        */
-      backup: {
-        type: Number
+      active: {
+        type: Boolean,
+        value: false
       },
 
       /**
-       * Deploy Status Code
+       * name
        * @type {String}
        */
-      deploy: {
-        type: String
+      name: {
+        type: String,
+        value: 'Process Name'
       },
 
       /**
@@ -29,7 +31,8 @@
        * @type {Number}
        */
       status: {
-        type: Number
+        type: Number,
+        value: 'Status'
       },
 
       /**
@@ -37,7 +40,8 @@
        * @type {String}
        */
       user: {
-        type: String
+        type: String,
+        value: 'Nick Chad'
       },
 
       /**
@@ -45,14 +49,9 @@
        * @type {String}
        */
       datetime: {
-        type: String
+        type: String,
+        value: '10/21/85 04:29'
       }
-    },
-
-    ready: function ready() {
-      this.user = 'Nick Chad';
-      this.datetime = '10/21/85 04:29';
-      this.status = 'Status';
     }
 
   });
