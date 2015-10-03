@@ -5,7 +5,7 @@
 
     is: 'wid-card-process-status',
 
-    behaviors: [Polymer.WidCardWeightBehavior, Polymer.WidCardSubscriptionsBehavior],
+    behaviors: [Polymer.WidCardStandardBehavior, Polymer.WidCardWeightBehavior, Polymer.WidCardSubscriptionsBehavior],
 
     properties: {
       /**
