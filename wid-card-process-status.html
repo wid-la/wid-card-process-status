@@ -25,7 +25,7 @@ Example:
 -->
 </head><body><dom-module id="wid-card-process-status">
 
-<template>
+  <template>
 
     <style>
 
@@ -38,10 +38,6 @@ Example:
       paper-material {
         overflow-y: auto;
         height: 100%;
-      }
-
-      iron-icon {
-        /*color: var(--paper-blue-600);*/
       }
 
       #header-container {
@@ -62,17 +58,9 @@ Example:
         color: red;
       }
 
-      .row-icon iron-icon {
-        /*margin-top: 5px;*/
-      }
-
       .row-value {
         font-weight: bold;
         font-size: 1.5vw;
-      }
-
-      #header-container iron-icon {
-        /*--iron-icon-height: 100%;*/
       }
 
       #date-container .row-icon,
@@ -80,16 +68,16 @@ Example:
         background-color: #1b68a5;
       }
 
-      #user-container  .row-icon {
+      #user-container .row-icon {
         background-color: #01579b;
       }
 
-      #user-container  .row-icon iron-icon,
-      #status-container  .row-icon iron-icon {
+      #user-container .row-icon iron-icon,
+      #status-container .row-icon iron-icon {
         --iron-icon-width: calc(100%/3);
       }
 
-      #date-container  .row-icon iron-icon {
+      #date-container .row-icon iron-icon {
         --iron-icon-width: calc(100%/2);
       }
 

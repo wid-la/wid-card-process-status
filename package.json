@@ -13,7 +13,7 @@
   ],
   "main": "wid-card-process-status.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/<USERNAME>/wid-card-process-status/",
+  "homepage": "https://github.com/wid-la/wid-card-process-status/",
   "ignore": [
     "/.*",
     "/test/",
