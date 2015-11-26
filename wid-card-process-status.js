@@ -5,7 +5,7 @@
 
     is: 'wid-card-process-status',
 
-    behaviors: [Polymer.WidCardStandardBehavior, Polymer.WidCardWeightBehavior, Polymer.WidCardSubscriptionsBehavior],
+    behaviors: [Polymer.WidCardStandardBehavior, Polymer.WidCardWeightBehavior, Polymer.WidCardSubscriptionsBehavior, Polymer.WidCardThemeBehavior],
 
     properties: {
       /**
@@ -23,7 +23,7 @@
        */
       name: {
         type: String,
-        value: 'Process Name'
+        value: 'Process'
       },
 
       /**
@@ -32,7 +32,7 @@
        */
       status: {
         type: Number,
-        value: 'Status'
+        value: '~'
       },
 
       /**
@@ -41,7 +41,7 @@
        */
       user: {
         type: String,
-        value: 'Nick Chad'
+        value: ''
       },
 
       /**
@@ -61,6 +61,11 @@
       var year = String(date.getFullYear()).substring(2, 4);
       var hours = date.getHours();
       var minutes = date.getMinutes();
+
+      month = month < 10 ? '0' + month : month;
+      day = day < 10 ? '0' + day : day;
+      hours = hours < 10 ? '0' + hours : hours;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
 
       return month + '/' + day + '/' + year + ' ' + hours + ':' + minutes;
     }

@@ -38,6 +38,7 @@ Example:
       paper-material {
         overflow-y: auto;
         height: 100%;
+        overflow: visible;
       }
 
       #header-container {
@@ -103,7 +104,7 @@ Example:
     </div>
 
 
-    <paper-material class="layout vertical flex" elevation="3">
+    <paper-material id="main_content" class="layout vertical flex" elevation="3">
 
       <div id="header-container" class="layout horizontal flex center-center">
         <div class="flex"></div>
@@ -141,7 +142,8 @@ Example:
     behaviors: [
       Polymer.WidCardStandardBehavior,
       Polymer.WidCardWeightBehavior,
-      Polymer.WidCardSubscriptionsBehavior
+      Polymer.WidCardSubscriptionsBehavior,
+      Polymer.WidCardThemeBehavior
     ],
 
     properties: {
@@ -160,7 +162,7 @@ Example:
        */
       name: {
         type: String,
-        value: 'Process Name'
+        value: 'Process'
       },
 
       /**
@@ -169,7 +171,7 @@ Example:
        */
       status: {
         type: Number,
-        value: 'Status'
+        value: '~'
       },
 
       /**
@@ -178,7 +180,7 @@ Example:
        */
       user: {
         type: String,
-        value: 'Nick Chad'
+        value: ''
       },
 
       /**
@@ -198,6 +200,11 @@ Example:
       var year    = String(date.getFullYear()).substring(2, 4);
       var hours   = date.getHours();
       var minutes = date.getMinutes();
+
+      month   = (month < 10) ? '0' + month : month;
+      day     = (day < 10) ? '0' + day : day;
+      hours   = (hours < 10) ? '0' + hours : hours;
+      minutes = (minutes < 10) ? '0' + minutes : minutes;
 
       return month + '/' + day + '/' + year + ' ' + hours + ':' + minutes;
     }
